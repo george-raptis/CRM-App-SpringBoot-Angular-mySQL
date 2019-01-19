@@ -1,0 +1,31 @@
+<br> <br>
+<div class="row d-flex justify-content-center">
+  <div class="card border-secondary col-8">
+    <hr>
+    <div class="btn btn-primary" routerLink="/create">Add Employee</div>
+    <hr>
+    <table class="table">
+    <thead>
+    <tr>
+      <th hidden>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees">
+      <td hidden>{{employee.id}}</td>
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.email}}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="edit(employee)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="delete(employee)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+</div>
