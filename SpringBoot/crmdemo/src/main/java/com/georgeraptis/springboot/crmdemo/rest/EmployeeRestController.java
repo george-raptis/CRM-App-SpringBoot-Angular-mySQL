@@ -1,6 +1,5 @@
 package com.georgeraptis.springboot.crmdemo.rest;
 
-import com.georgeraptis.springboot.crmdemo.dao.EmployeeDAO;
 import com.georgeraptis.springboot.crmdemo.entity.Employee;
 import com.georgeraptis.springboot.crmdemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +40,7 @@ public class EmployeeRestController {
 
         theEmployee.setId(0);
 
-        employeeService.add(theEmployee);
+        employeeService.save(theEmployee);
 
         return theEmployee;
     }
@@ -49,7 +48,7 @@ public class EmployeeRestController {
     @PutMapping("/employees")
     public Employee updateEmployee(@RequestBody Employee theEmployee) {
 
-        employeeService.add(theEmployee);
+        employeeService.save(theEmployee);
 
         return theEmployee;
     }
